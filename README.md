@@ -10,5 +10,5 @@ This application will guide developers on how the elixir wrapper functionalities
 ### How to get started 
 To start developing, you will need the following
  -  `elixir > 1.8.0` installed in your computer.
- - Go to [Africas Talking]<https://account.africastalking.com/auth/register> to register for an account
+ - Go to [Africas Talking](https://account.africastalking.com/auth/register) to register for an account
  
