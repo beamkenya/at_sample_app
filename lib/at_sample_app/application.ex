@@ -10,6 +10,7 @@ defmodule AtSampleApp.Application do
     children = [
       # Starts a worker by calling: AtSampleApp.Worker.start_link(arg)
       # {AtSampleApp.Worker, arg}
+      Plug.Cowboy.child_spec(scheme: :http, plug: AtSampleApp.Router, options: [port: 4001])
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
