@@ -69,7 +69,7 @@ Wherever possible, do not take these conversations to private channels, includin
 ## Contributors
 
 Auto-populated from:
-[contributors-img](https://contributors-img.firebaseapp.com/image?repo=droidconke/droidconKe2020_web)
+[contributors-img](https://contributors-img.firebaseapp.com/image?repo=beamkenya/at_sample_app)
 
 <a href="https://github.com/beamkenya/at_sample_app/graphs/contributors">
   <img src="https://contributors-img.firebaseapp.com/image?repo=beamkenya/at_sample_app" />
