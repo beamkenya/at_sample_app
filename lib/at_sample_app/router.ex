@@ -25,4 +25,8 @@ defmodule AtSampleApp.Router do
 
     send_resp(conn, status || 200, body)
   end
+
+  match _ do
+    send_resp(conn, 404, "Oh no! What you seek cannot be found.")
+  end
 end
