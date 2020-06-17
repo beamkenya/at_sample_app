@@ -20,7 +20,7 @@ defmodule AtSampleApp.Ussd.SimpleUssdController do
         text(conn, response)
 
       "2" ->
-        {:ok, response} = AtEx.USSD.build_response("Phone No: " <> phone)
+        {:ok, response} = AtEx.USSD.build_response("Phone No: " <> phone, :end)
         text(conn, response)
 
       "3" ->
@@ -47,29 +47,29 @@ defmodule AtSampleApp.Ussd.SimpleUssdController do
         text(conn, response)
 
       "1*3" ->
-        {:ok, response} = AtEx.USSD.build_response("Rice & beans are awesome")
+        {:ok, response} = AtEx.USSD.build_response("Rice & beans are awesome", :end)
 
         text(conn, response)
 
       "1*1*1" ->
-        {:ok, response} = AtEx.USSD.build_response("Chips Masala - Ksh 180 \nawessome meal")
+        {:ok, response} = AtEx.USSD.build_response("Chips Masala - Ksh 180 \nawessome meal", :end)
         text(conn, response)
 
       "1*1*2" ->
-        {:ok, response} = AtEx.USSD.build_response("Chips Plain - Ksh 100 \nawessome ")
+        {:ok, response} = AtEx.USSD.build_response("Chips Plain - Ksh 100 \nawessome ", :end)
         text(conn, response)
 
       "1*1*3" ->
-        {:ok, response} = AtEx.USSD.build_response("Smokies - Ksh 30 ")
+        {:ok, response} = AtEx.USSD.build_response("Smokies - Ksh 30 ", :end)
         text(conn, response)
 
       _ ->
-        {:ok, response} = AtEx.USSD.build_response("Oops ! Invalid option")
+        {:ok, response} = AtEx.USSD.build_response("Oops ! Invalid option", :end)
         text(conn, response)
     end
   end
 
   def ussd(conn, _params) do
-    text(conn, "END AN Error Ocuured in response !")
+    text(conn, "END AN Error Ocuured in response !", :end)
   end
 end
