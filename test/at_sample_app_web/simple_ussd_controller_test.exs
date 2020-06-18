@@ -33,7 +33,9 @@ defmodule AtSampleAppWeb.SimpleUssdControllerTest do
       |> Router.call(@opts)
 
     {_status, _headers, body} = Plug.Test.sent_resp(conn)
-    assert body =~ "CON Chips & Sausage\n1. Chips Masala - Ksh 180\n2. Chips Plain - Ksh 100\n3. Smokies - Ksh 30"
+
+    assert body =~
+             "CON Chips & Sausage\n1. Chips Masala - Ksh 180\n2. Chips Plain - Ksh 100\n3. Smokies - Ksh 30"
   end
 
   test "ussd POST /ussd/simple for resposnse when user slects option 1*2" do
@@ -53,7 +55,7 @@ defmodule AtSampleAppWeb.SimpleUssdControllerTest do
     {_status, _headers, body} = Plug.Test.sent_resp(conn)
     assert body =~ "END Rice & beans are awesome"
   end
-  
+
   test "ussd POST /ussd/simple for resposnse when user slects option 2" do
     conn =
       conn(:post, @ussd_url, %{"phoneNumber" => "254724540000", "text" => "2"})
@@ -62,8 +64,7 @@ defmodule AtSampleAppWeb.SimpleUssdControllerTest do
     {_status, _headers, body} = Plug.Test.sent_resp(conn)
     assert body =~ "END Phone No: 254724540000"
   end
-  
-  
+
   test "ussd POST /ussd/simple for resposnse when user slects option 3, ending session" do
     conn =
       conn(:post, @ussd_url, %{"phoneNumber" => "254724540000", "text" => "3"})
