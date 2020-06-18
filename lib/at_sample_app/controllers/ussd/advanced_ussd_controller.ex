@@ -4,9 +4,22 @@ defmodule AtSampleApp.Ussd.AdvancedUssdController do
 
   @invalid_message "Oops, Invalid Option !"
 
-  def at_ussd(conn, %{"phoneNumber" => _phone, "text" => _text} = _params) do
+  def at_ussd(conn, %{"phoneNumber" => _phone, "text" => text} = _params) do
+    # \*+[a-z0-9_]+\*0
     # ! WIP
+    [level: level, data: _data, last: _last] = process_request(text)
     text(conn, 'WIP')
+
+    case level do
+      1 ->
+        text(conn, level)
+
+      2 ->
+        text(conn, level)
+
+      _ ->
+        text(conn, AtEx.USSD.build_response(@invalid_message, :end))
+    end
   end
 
   @doc """
