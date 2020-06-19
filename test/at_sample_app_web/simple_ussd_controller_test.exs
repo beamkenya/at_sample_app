@@ -18,7 +18,7 @@ defmodule AtSampleAppWeb.SimpleUssdControllerTest do
     assert status === 200
   end
 
-  test "ussd POST /ussd/simple for resposnse when user slects option 1" do
+  test "ussd POST /ussd/simple for response when user selects option 1" do
     conn =
       conn(:post, @ussd_url, %{"phoneNumber" => "254724540000", "text" => "1"})
       |> Router.call(@opts)
@@ -27,7 +27,7 @@ defmodule AtSampleAppWeb.SimpleUssdControllerTest do
     assert body =~ "CON 1. Chips & Sausage\n2. Burger & Chips\n3. Rice & beans"
   end
 
-  test "ussd POST /ussd/simple for resposnse when user slects option 1*1" do
+  test "ussd POST /ussd/simple for response when user selects option 1*1" do
     conn =
       conn(:post, @ussd_url, %{"phoneNumber" => "254724540000", "text" => "1*1"})
       |> Router.call(@opts)
@@ -38,7 +38,7 @@ defmodule AtSampleAppWeb.SimpleUssdControllerTest do
              "CON Chips & Sausage\n1. Chips Masala - Ksh 180\n2. Chips Plain - Ksh 100\n3. Smokies - Ksh 30"
   end
 
-  test "ussd POST /ussd/simple for resposnse when user slects option 1*2" do
+  test "ussd POST /ussd/simple for response when user selects option 1*2" do
     conn =
       conn(:post, @ussd_url, %{"phoneNumber" => "254724540000", "text" => "1*2"})
       |> Router.call(@opts)
@@ -47,7 +47,7 @@ defmodule AtSampleAppWeb.SimpleUssdControllerTest do
     assert body =~ "CON Burger & Chips\n1. Burger & Chips - Ksh 320\n2. Burger & Chips - Ksh 500"
   end
 
-  test "ussd POST /ussd/simple for resposnse when user slects option 1*3" do
+  test "ussd POST /ussd/simple for response when user selects option 1*3" do
     conn =
       conn(:post, @ussd_url, %{"phoneNumber" => "254724540000", "text" => "1*3"})
       |> Router.call(@opts)
@@ -56,7 +56,7 @@ defmodule AtSampleAppWeb.SimpleUssdControllerTest do
     assert body =~ "END Rice & beans are awesome"
   end
 
-  test "ussd POST /ussd/simple for resposnse when user slects option 2" do
+  test "ussd POST /ussd/simple for response when user selects option 2" do
     conn =
       conn(:post, @ussd_url, %{"phoneNumber" => "254724540000", "text" => "2"})
       |> Router.call(@opts)
@@ -65,7 +65,7 @@ defmodule AtSampleAppWeb.SimpleUssdControllerTest do
     assert body =~ "END Phone No: 254724540000"
   end
 
-  test "ussd POST /ussd/simple for resposnse when user slects option 3, ending session" do
+  test "ussd POST /ussd/simple for response when user selects option 3, ending session" do
     conn =
       conn(:post, @ussd_url, %{"phoneNumber" => "254724540000", "text" => "3"})
       |> Router.call(@opts)
