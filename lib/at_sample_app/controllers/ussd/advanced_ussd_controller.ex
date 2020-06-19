@@ -6,7 +6,7 @@ defmodule AtSampleApp.Ussd.AdvancedUssdController do
   @about_message "This is a At Sample Ussd App, The App is simple"
 
   def at_ussd(conn, %{"phoneNumber" => phone, "text" => text} = _params) do
-    IO.inspect(text)
+    # IO.inspect(text)
     # \*+[a-z0-9_]+\*0
     # ! WIP
     [level: level, data: data, last: last] = process_request(text)
@@ -153,7 +153,7 @@ defmodule AtSampleApp.Ussd.AdvancedUssdController do
   @spec process_request(String.t()) :: list()
   def process_request(text) do
     text = check_for_back(text)
-    IO.inspect(text)
+    # IO.inspect(text)
 
     case text !== "" do
       true ->
@@ -180,7 +180,7 @@ defmodule AtSampleApp.Ussd.AdvancedUssdController do
   It takes in the `text` from the USSD params
 
   ## Example
-      iex> AtSampleApp.Ussd.AdvancedUssdController.check_for_back(1*2*0*23*5gt*0*4)
+      iex> AtSampleApp.Ussd.AdvancedUssdController.check_for_back("1*2*0*23*5gt*0*4")
       "1*23*4"
 
   """
