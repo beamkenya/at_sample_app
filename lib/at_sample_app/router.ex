@@ -1,28 +1,11 @@
 defmodule AtSampleApp.Router do
-  use Plug.Router
-
-  @template_dir "lib/at_sample_app/templates"
-
-  plug(Plug.Parsers,
-    parsers: [:json],
-    pass: ["text/*"],
-    json_decoder: Jason
-  )
-
-  plug(:match)
-  plug(:dispatch)
+  use AtSampleAppWeb, :router
 
   get "/contact" do
-    render(conn, "contact.html")
+    AtSampleApp.ContactController.contact(conn)
   end
 
-  defp render(%{status: status} = conn, template, assigns \\ []) do
-    body =
-      @template_dir
-      |> Path.join(template)
-      |> String.replace_suffix(".html", ".html.eex")
-      |> EEx.eval_file(assigns)
-
-    send_resp(conn, status || 200, body)
+  match _ do
+    send_resp(conn, 404, "Oh no! What you seek cannot be found.")
   end
 end
