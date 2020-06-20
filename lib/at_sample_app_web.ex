@@ -16,6 +16,10 @@ defmodule AtSampleAppWeb do
 
         send_resp(conn, status || 200, body)
       end
+
+      defp text(%{status: status} = conn, body, assigns \\ []) do
+        send_resp(conn, status || 200, body)
+      end
     end
   end
 
@@ -24,8 +28,8 @@ defmodule AtSampleAppWeb do
       use Plug.Router
 
       plug(Plug.Parsers,
-        parsers: [:json],
-        pass: ["text/*"],
+        parsers: [:json, :urlencoded],
+        pass: ["text/*", "application/*"],
         json_decoder: Jason
       )
 
