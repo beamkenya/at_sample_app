@@ -2,8 +2,8 @@
 
 ## Introduction
 
-AtSampleApp is a sample application that has sample usecases of different  existing functionalities in the africastalking elixir wrapper.
-Developers can use this to get a better understanding of how the wapper works nad/or test these intergrations locally.
+AtSampleApp is a sample web application with `Plug.Router` that has sample usecases of different  existing functionalities in the africastalking elixir wrapper.
+Developers can use this to get a better understanding of how the wapper works and/or test these intergrations locally.
 
 Africastalking elixir wrapper has already been added as dependency in the `mix.exs` .
 
@@ -24,6 +24,8 @@ It shall be updated with functionalities from the wrapper that are ready for con
 ## Build set up
 
 Install dependencies with `mix deps.get`
+
+Run the server with `mix run --no-halt`. And access it at `localhost:4001`
 
 Run the app `iex -S mix`
 
