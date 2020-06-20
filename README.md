@@ -29,6 +29,8 @@ Run the server with `mix run --no-halt`. And access it at `localhost:4001`
 
 Run the app `iex -S mix`
 
+Or run `mix run --no-halt` for the web then visit `http://localhost:4001`
+
 ## How to get started 
 To start developing, you will need the following
  -  `elixir > 1.8.0` installed in your computer.
@@ -40,8 +42,8 @@ To start developing, you will need the following
 Here are the main functionalities included in which are inlcuded in this app, the plan is to cover the usecases all the functionalities within the wrapper.
 You can contribute by adding more, check out the [Contribution Guide](how-to-contribute)
 - [ ] SMS
-- [ ] Voice 
-- [x] USSD 
+- [x] USSD
+- [ ] Voice  
 - [ ] Airtime
 - [ ] Payments
 - [ ] IoT
@@ -51,6 +53,12 @@ You can contribute by adding more, check out the [Contribution Guide](how-to-con
 ## Use Cases 
 
 ### USSD
+
+For more info about serice codes, check [Africastalking Service Codes](https://account.africastalking.com/apps/sandbox/ussd/codes).
+
+USSD urls ar available on `/ussd/simple` and `/ussd/advanced` for simple and comples USSD usecases respectively.
+
+You can use [Ngrok](https://ngrok.com/) to expose your localhost urls
 
 ### SMS
 
