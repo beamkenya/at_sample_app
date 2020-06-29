@@ -1,6 +1,10 @@
 defmodule AtSampleApp.Router do
   use AtSampleAppWeb, :router
 
+  get "/" do
+    AtSampleApp.HomeController.index(conn)
+  end
+
   get "/contact" do
     AtSampleApp.ContactController.contact(conn)
   end
