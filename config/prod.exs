@@ -6,4 +6,7 @@ config :at_ex,
   accept: "application/json",
   auth_token: "",
   username: "sandbox",
-  endpoint: "sandbox"
+  endpoint: "sandbox",
+  http: [port: {:system, "PORT"}],
+  url: [scheme: "https", host: "boiling-fortress-43824.herokuapp.com", port: 443],
+  force_ssl: [rewrite_on: [:x_forwarded_proto]],
