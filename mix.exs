@@ -23,7 +23,7 @@ defmodule AtSampleApp.MixProject do
   defp deps do
     [
       {:at_ex, git: "https://github.com/elixirkenya/africastalking-elixir", branch: "develop"},
-      {:plug_cowboy, "~> 2.0"},
+      {:plug_cowboy, "~> 2.1"},
       {:jason, "~> 1.1"}
       # {:dep_from_hexpm, "~> 0.3.0"},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
