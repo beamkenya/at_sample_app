@@ -9,4 +9,4 @@ config :at_ex,
   endpoint: "sandbox",
   http: [port: {:system, "PORT"}],
   url: [scheme: "https", host: "boiling-fortress-43824.herokuapp.com", port: 443],
-  force_ssl: [rewrite_on: [:x_forwarded_proto]],
+  force_ssl: [rewrite_on: [:x_forwarded_proto]]
