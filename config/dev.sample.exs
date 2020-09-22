@@ -1,9 +1,13 @@
 use Mix.Config
 
 config :at_ex,
-  api_key: "===INSERT AFRICAS_TALKING_API_KEY HERE ===",
-  content_type: "application/x-www-form-urlencoded",
-  accept: "application/json",
-  auth_token: "",
+  api_key: "===INSERT AFRICAS_TALKING_SANDBOX_API_KEY HERE ===",
+  # When changed to "false" one will use the live endpoint url
+  sandbox: true,
   username: "sandbox",
-  endpoint: "sandbox"
+  stk_product_name: "AtEx",
+  b2c_product_name: "AtEx",
+  b2b_product_name: "AtEx",
+  bank_checkout_product_name: "AtEx",
+  bank_transfer_product_name: "AtEx",
+  card_checkout_product_name: "AtEx"
