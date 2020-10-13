@@ -22,7 +22,7 @@ defmodule AtSampleApp.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:at_ex, git: "https://github.com/elixirkenya/africastalking-elixir", branch: "develop"},
+      {:at_ex, "~> 0.20.22"},
       {:plug_cowboy, "~> 2.0"},
       {:jason, "~> 1.1"}
       # {:dep_from_hexpm, "~> 0.3.0"},
